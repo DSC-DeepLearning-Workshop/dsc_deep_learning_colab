@@ -70,8 +70,8 @@ def plot_images_predictions(
 
         axs[i // len(classes), i % len(classes)].text(img.width / 2, img.height * 0.9, f'Predicted: {classes[preds[i]]}', size=20, ha="center",
                                 fontweight="bold",
-                                backgroundcolor="white",
-                                color="black")
+                                backgroundcolor="green" if classes[preds[i]] == classes[labels[i]] else "red",
+                                color="white")
 
     for j in range(i % len(classes), len(classes)):
         axs[-1, j].axis('off')
